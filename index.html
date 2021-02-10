@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://kit.fontawesome.com/227095ec8d.js" crossorigin="anonymous"></script>
+    <title>CyberPet</title>
+</head>
+
+<body>
+    <h1>Welcome to CyberPet</h1>
+
+    <div class="maincontainer">
+        <div class="subcontainers" id="dogContainer">
+            <img class="pic" id="dogPic" src="https://lh3.googleusercontent.com/proxy/sE9ZDTzFmlZE8kRaPTn01t7DHETJQqOM8lp88WZTW3Uy2_-1wmaSR_7gPsQf66syQGj0UNj1a9LqsVKhjxmJNTg">   
+        </div>
+        <div class="subcontainers" id="catContainer">
+            <img class="pic" id="catPic" src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg">
+        </div>
+        <div class="subcontainers" id="rabbitContainer">
+            <img class="pic" id="rabbitPic" src="https://www.oxbowanimalhealth.com/uploads/files/Feb_2019_blog_rabbit_noises.png">
+        </div>
+    </div>
+
+    <div class = "animalInfo" id="animalInfo">
+        <h2 class="name">Dog<br><span id="animalName"></span></h2>
+        <h3 class="play level">My Boredness Level<br><span class="borednessLevel">100</span></h3>
+        <button class="levelBtn" id="playBtn">Play with me!</button>
+        <h3 class="hunger level">My Hunger Level<br><span class="hungerLevel">100</span></h3> 
+        <button class="levelBtn" id="feedBtn">Please feed me!</button>
+        <h3 class="thirst level">My Thirst Level<br><span class="thirstLevel">100</span></h3> 
+        <button class="levelBtn" id="gWaterBtn">Can I have some water, please?</button>
+    </div>
+
+    <footer>
+        <button class="backBtn" id="backBtn"><i class="fas fa-arrow-circle-left"></i> Check the Other Pets</button>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="UI.js"></script>
+</body>
+</html>
