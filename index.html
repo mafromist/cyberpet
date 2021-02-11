@@ -10,32 +10,56 @@
 </head>
 
 <body>
-    <h1>Welcome to CyberPet</h1>
-
+    <div class="gameTitle">
+        <h1>Welcome to CyberPet</h1>
+        <h2>Pick Your CyberPet</h2>
+    </div>
     <div class="maincontainer">
         <div class="subcontainers" id="dogContainer">
-            <img class="pic" id="dogPic" src="https://lh3.googleusercontent.com/proxy/sE9ZDTzFmlZE8kRaPTn01t7DHETJQqOM8lp88WZTW3Uy2_-1wmaSR_7gPsQf66syQGj0UNj1a9LqsVKhjxmJNTg">   
+            <img class="pic" id="dogPic" src="../cyberpet/img/dog.jpg">   
         </div>
         <div class="subcontainers" id="catContainer">
-            <img class="pic" id="catPic" src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg">
+            <img class="pic" id="catPic" src="../cyberpet/img/cat.jpg">
         </div>
         <div class="subcontainers" id="rabbitContainer">
-            <img class="pic" id="rabbitPic" src="https://www.oxbowanimalhealth.com/uploads/files/Feb_2019_blog_rabbit_noises.png">
+            <img class="pic" id="rabbitPic" src="../cyberpet/img/rabbit.jpg">
         </div>
     </div>
 
     <div class = "animalInfo" id="animalInfo">
-        <h2 class="name">Dog<br><span id="animalName"></span></h2>
-        <h3 class="play level">My Boredness Level<br><span class="borednessLevel">100</span></h3>
-        <button class="levelBtn" id="playBtn">Play with me!</button>
-        <h3 class="hunger level">My Hunger Level<br><span class="hungerLevel">100</span></h3> 
-        <button class="levelBtn" id="feedBtn">Please feed me!</button>
-        <h3 class="thirst level">My Thirst Level<br><span class="thirstLevel">100</span></h3> 
-        <button class="levelBtn" id="gWaterBtn">Can I have some water, please?</button>
+        <div class="animalTitles">
+            <h2 class="name" id="animalType">Dog</h2>
+            <h2 id="animalName"></h2>
+        </div>
+        <div class="gameContainer">
+            <div class = "boredContainer">
+                <button class="levelBtn" id="playBtn">Play with me!</button>
+                <div class="progressBg">
+                    <label for="happinessLevel" class="play level">Happiness Level</label><br>
+                    <progress class="progressBars" id="happinessLevel" min="0" max="100" value="0"></progress>
+                </div>
+            </div>
+
+            <div class = "hungerContainer">
+                <button class="levelBtn" id="feedBtn">Please feed me!</button>
+                <div class="progressBg">
+                    <label for="hungerLevel" class="hunger level">Hunger Level</label><br>
+                    <progress class="progressBars" id="hungerLevel" min="0" max="100" value="0"></progress>
+                </div>  
+            </div>
+
+            <div class = "thirstContainer">
+                <button class="levelBtn" id="gWaterBtn">Water please!</button>
+                <div class="progressBg">   
+                    <label for="thirstLevel" class="thirst level">Thirst Level</label><br>
+                    <progress class="progressBars" id="thirstLevel" min="0" max="100" value="0"></progress>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <button class="backBtn" id="backBtn"><i class="fas fa-arrow-circle-left"></i> Check the Other Pets</button>
+        <button class="backBtn" id="backBtn"><i class="fas fa-arrow-circle-left"></i>Start Again?</button>
     </footer>
 
 
