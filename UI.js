@@ -24,7 +24,6 @@ dogImg.addEventListener('click', event => {
     gameTitle.style.display = "none";
     startLevels();
     systemDecrease();  
-    
 });
 
 catImg.addEventListener('click', event => {
@@ -62,22 +61,22 @@ playBtn.addEventListener('click', event => {
         happinessLevel.value = `${petName.happiness += 20}`;
     } else if (petName.happiness >= 100) {
         alert("I am joyful!!");
-        systemDecrease();
     } else {
         happinessLevel.value = `${petName.happiness += 10}`;
     }
+    checkLevels();
 });
 
 feedBtn.addEventListener('click', event => {
     if(petName.hunger <= 0) {
-        alert(`Starvinngg..poor ${petName.name}!`);
+        alert(`Starvinngg...poor ${petName.name}!`);
         hungerLevel.value = `${petName.hunger += 20}`;
     } else if (petName.hunger >= 100) {
         alert("Stop feeding me, I am full!");
-        systemDecrease();
     } else {
         hungerLevel.value = `${petName.hunger += 10}`;
     }
+    checkLevels();
 });
 
 gWaterBtn.addEventListener('click', event => {
@@ -85,11 +84,11 @@ gWaterBtn.addEventListener('click', event => {
         alert("WAATEEERRR!!!!");
         thirstLevel.value = `${petName.thirst += 20}`;
     } else if (petName.thirst >= 100) {
-        alert("Stop giving water, I am bloated!");
-        systemDecrease(); 
+        alert("Stop giving me water, I am bloated!");
     } else {
         thirstLevel.value = `${petName.thirst += 10}`;
     }
+    checkLevels();
 });
 
 let backBtn = document.querySelector("#backBtn");
@@ -102,6 +101,7 @@ const startLevels = () => {
     happinessLevel.value = `${petName.happiness}`;
     hungerLevel.value = `${petName.hunger}`;
     thirstLevel.value = `${petName.thirst}`;  
+    checkLevels();
 }
 
 const systemDecrease = () => {
@@ -109,22 +109,24 @@ const systemDecrease = () => {
         happinessLevel.value = `${petName.happiness -= 5}`;
         hungerLevel.value = `${petName.hunger -= 5}`;
         thirstLevel.value = `${petName.thirst -= 5}`;
+        checkLevels();
     }, 2000);
 }
 
-/*  trying to change the color of progress bar depends on the levels
+ // trying to change the color of progress bar depends on the levels
 
-let progressBars = document.querySelector(".progressBars[value]::-webkit-progress-value");
-
-progressBars.style.backgroundColor = "#289";
 
 const checkLevels = () => {
-    if(petName.happiness >= 50) {
-        progressBars.style.backgroundColor = "white";
-    } else {
-        progressBars.style.backgroundColor = "green";
+    for(const pgBar of document.querySelectorAll(".progressBars")){
+        if(pgBar.value >= 50) {
+            pgBar.classList.add("healthyProgress");
+            pgBar.classList.remove("unhealthyProgress");
+        } else {
+            pgBar.classList.remove("healthyProgress");
+            pgBar.classList.add("unhealthyProgress");
+        }
     }
-} */
+}
 
 
 //PSEUDO CODE
